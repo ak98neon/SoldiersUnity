@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8CFDCFE0-72AC-1950-D07F-FE2C36B32BC6}</ProjectGuid>
+    <ProjectGuid>{9C34681D-A5A0-AD0D-1361-1DA1167AD27C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,9 +53,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\FauxGravityAttractor.cs" />
      <Compile Include="Assets\Scripts\FauxGravityBody.cs" />
+     <Compile Include="Assets\Scripts\GUI\SpaceScene.cs" />
+     <Compile Include="Assets\Scripts\MoveUnit\MoveUnitStrategy.cs" />
      <Compile Include="Assets\Scripts\SoldierController.cs" />
      <Compile Include="Assets\Scripts\SunMove\GravityScriptSun.cs" />
      <Compile Include="Assets\Scripts\SunMove\LookAtPlanet.cs" />
+     <Compile Include="Assets\Scripts\SunMove\MovePlanet.cs" />
      <Compile Include="Assets\Scripts\SunMove\MoveSun.cs" />
      <None Include="Assets\StarNestSkybox\StarNestSkyboxReadme.txt" />
      <None Include="Assets\StarNestSkybox\StarNestSkybox_HSV.shader" />
@@ -64,16 +67,16 @@
      <None Include="Assets\StarNestSkybox\StarNestSkybox.shader" />
      <None Include="Assets\StarNestSkybox\StarNest.shader" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>D:/Unity3d/Projects/Soldiers/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>D:/Unity3d/Projects/Soldiers/.git/SoldiersUnity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Unity3d/Projects/Soldiers/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/Unity3d/Projects/Soldiers/.git/SoldiersUnity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Unity3d/Projects/Soldiers/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/Unity3d/Projects/Soldiers/.git/SoldiersUnity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Unity3d/Projects/Soldiers/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/Unity3d/Projects/Soldiers/.git/SoldiersUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Unity3d/BetaUnity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

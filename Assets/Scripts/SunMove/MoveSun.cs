@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class MoveSun : MonoBehaviour {
 
-    public float speed = 5f;
-
-    private float periodSun = 10f;
+    public float speed = 0.1f;
 
     void Update()
     {
-        transform.Rotate(Vector3.up);
-        //transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
+        transform.RotateAround(Vector3.zero, Vector3.up, speed * Time.deltaTime);
     }
 }
