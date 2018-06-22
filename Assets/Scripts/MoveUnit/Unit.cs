@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
+	public float speedRotation = 8.0f;
 	public bool isMove = false;
 	public Vector3 destination;
 	private Quaternion targetRotation;
@@ -29,6 +30,9 @@ public class Unit : MonoBehaviour {
 		if (isMove) {
 			if (Vector3.Distance(destination, transform.position) > 0.5f) {
 				destination.y = transform.position.y;
+
+				Quaternion newRotation = Quaternion.LookRotation(transform.position - destination, Vector3.forward);
+				transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * speedRotation);
 
 				transform.position = Vector3.MoveTowards(transform.position, destination, 5f * Time.deltaTime);
 			} else {

@@ -35,8 +35,6 @@ public class SelectObjects : MonoBehaviour {
                 Vector3 targetPosition = hit.point;
 
 				if (hit.transform.gameObject.tag == "Unit") {
-					Deselect();
-
 					for (int i = 0; i < unit.Count; i++) {
 						if (hit.transform.position == unit[i].transform.position) {
 							unitSelected.Add(unit[i]);
@@ -76,6 +74,7 @@ public class SelectObjects : MonoBehaviour {
 	{
 		if(unitSelected.Count > 0)
 		{
+			unitSelected.Clear();
 			for(int j = 0; j < unitSelected.Count; j++)
 			{
 				// отменяем то, что делали с объектоми
