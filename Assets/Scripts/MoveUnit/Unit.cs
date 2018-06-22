@@ -32,6 +32,9 @@ public class Unit : MonoBehaviour {
 				destination.y = transform.position.y;
 
 				Quaternion newRotation = Quaternion.LookRotation(transform.position - destination, Vector3.forward);
+				newRotation.x = 0;
+				newRotation.z = 0;
+
 				transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * speedRotation);
 
 				transform.position = Vector3.MoveTowards(transform.position, destination, 5f * Time.deltaTime);
