@@ -18,20 +18,17 @@ public class MoveUnitStrategy : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit))
             {
-                float x = hit.transform.position.x;
-                float y = hit.transform.position.y;
-                float z = hit.transform.position.z;
+                Vector3 targetPosition = hit.point;
 
-                Vector3 lol = Input.mousePosition;
-                Vector3 destination = new Vector3(x, y, z);
-
-                foreach (GameObject un in SelectObjects.unitSelected) {
-                    un.GetComponent<Unit>().StartMove(lol);
+                if (SelectObjects.unitSelected.Count > 0) {
+                    foreach (GameObject un in SelectObjects.unitSelected) {
+                        un.GetComponent<Unit>().destination = targetPosition;
+                        un.GetComponent<Unit>().isMove = true;
+                    }
                 }
             }
         }
