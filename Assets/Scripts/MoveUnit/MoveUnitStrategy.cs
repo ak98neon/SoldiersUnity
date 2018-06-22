@@ -24,7 +24,7 @@ public class MoveUnitStrategy : MonoBehaviour {
             {
                 Vector3 targetPosition = hit.point;
 
-                if (SelectObjects.unitSelected.Count > 0) {
+                if (SelectObjects.unitSelected.Count > 0 && hit.transform.gameObject.tag == "Ground") {
                     foreach (GameObject un in SelectObjects.unitSelected) {
                         un.GetComponent<Unit>().destination = targetPosition;
                         un.GetComponent<Unit>().isMove = true;

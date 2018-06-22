@@ -12,11 +12,41 @@ public class SelectObjects : MonoBehaviour {
 	private bool draw;
 	private Vector2 startPos;
 	private Vector2 endPos;
-
+	private Camera cam;
 	void Awake () 
 	{
 		unit = new List<GameObject>();
 		unitSelected = new List<GameObject>();
+		cam = GetComponent<Camera>();
+	}
+
+	void Update() {
+		selectRaycastUnit();
+	}
+
+	void selectRaycastUnit() {
+		if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 targetPosition = hit.point;
+
+				if (hit.transform.gameObject.tag == "Unit") {
+					Deselect();
+
+					for (int i = 0; i < unit.Count; i++) {
+						if (hit.transform.position == unit[i].transform.position) {
+							unitSelected.Add(unit[i]);
+						}
+					}
+				} else {
+					Deselect();
+				}
+            }
+        }
 	}
 
 	// проверка, добавлен объект или нет
